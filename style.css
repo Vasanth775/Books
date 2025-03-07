@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #a3f736 0%, #fad0c4 99%, #fad0c4 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    padding: 20px;
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar {
+    background-color: #067ae7e0;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.books-container {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+}
+
+.books-container:hover {
+    transform: scale(1.05) rotateY(10deg); /* Add 3D rotation on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.books-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.2s; /* Smooth transition for image */
+}
+
+.books-container img:hover {
+    transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+
+.books-container .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.books-container h2 {
+    color: #ff6f61;
+    margin: 0;
+}
+
+.books-container h5 {
+    color: #029aff;
+    margin: 0;
+}
+
+.books-container p {
+    color: #fff;
+    margin: 0;
+}
+
+.books-container button {
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.books-container button:hover {
+    background-color: #ff4d4d;
+}
+
+.add-button {
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 100%;
+    padding: 20px 30px;
+    font-size: 40px;
+    border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+}
+
+.add-button:hover {
+    background-color: #ff4d4d;
+}
+
+.popup-overlay {
+    background-color: #020202;
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.popup-box {
+    background-color: rgb(103, 138, 170);
+    width: 40%;
+    padding: 40px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    z-index: 2;
+    display: none;
+}
+
+.popup-box input,
+.popup-box textarea {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border-bottom: solid black 2px;
+}
+
+.popup-box input::placeholder,
+.popup-box textarea::placeholder {
+    color: black;
+}
+
+.popup-box button {
+    background-color: rgb(0, 0, 0);
+    color: #fffbfb;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.popup-box input:focus,
+.popup-box textarea:focus {
+    outline: none;
+}
